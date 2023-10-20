@@ -13,23 +13,27 @@ export default function HomePage({ artPiecesInfo, mutate }) {
   }
   console.log("artPiecesInfo:", artPiecesInfo);
   return (
-    <Container>
-      <h1 style={{ color: "white" }}>ART GALLERY</h1>
-      <Cart>
-        <h2>Artist name: {artPiecesInfo[random].artist}</h2>
-        <h3>Picture name: {artPiecesInfo[random].name}</h3>
-        <Image
-          className="image"
-          src={artPiecesInfo[random].imageSource}
-          alt="pictur autor"
-          width={550}
-          height={350}
-        />
-        <p>{artPiecesInfo[random].year}</p>
-      </Cart>
-      <button type="button" onClick={() => mutate()}>
-        Revalidate
-      </button>
+    <>
+      <Container>
+        <h1 style={{ color: "white" }}>ART GALLERY</h1>
+        <Cart>
+          <div className="textContainer">
+            <h2> {artPiecesInfo[random].artist}</h2>
+            <h3> {artPiecesInfo[random].name}</h3>
+          </div>
+          <Image
+            className="image"
+            src={artPiecesInfo[random].imageSource}
+            alt="pictur autor"
+            width={550}
+            height={350}
+          />
+          <p>{artPiecesInfo[random].year}</p>
+        </Cart>
+        <button type="button" onClick={() => mutate()}>
+          Revalidate
+        </button>
+      </Container>
       <Footer>
         <NavBar isSilver href="/">
           Spotligth
@@ -37,6 +41,6 @@ export default function HomePage({ artPiecesInfo, mutate }) {
         <NavBar href="./artPiece">Art piece</NavBar>
         <NavBar href="/favorites">Favorite</NavBar>
       </Footer>
-    </Container>
+    </>
   );
 }

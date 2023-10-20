@@ -20,7 +20,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 export default function artPiece({ onToggle, artPiecesInfo }) {
   return (
     <Container>
-      <h1 style={{ color: "white" }}>ART GALLERY</h1>
+      <h1 style={{ color: "white", textAlign: "center" }}>ART GALLERY</h1>
       return (
       <>
         <Swiper
@@ -37,15 +37,17 @@ export default function artPiece({ onToggle, artPiecesInfo }) {
           }}
           pagination={true}
           modules={[EffectCoverflow, Pagination]}
-          className="mySwiper"
+          className="swiper"
         >
           {artPiecesInfo.map((element, index) => {
             return (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="sliderSlide">
                 <Cart>
                   <Link href={`/artPiece/${element.slug}`}>
-                    <h2>Artist name: {element.artist}</h2>
-                    <h3>Picture name: {element.name}</h3>
+                    <div className="textContainer">
+                      <h2> {element.artist}</h2>
+                      <h3> {element.name}</h3>
+                    </div>
                     <Image
                       className="image"
                       src={element.imageSource}

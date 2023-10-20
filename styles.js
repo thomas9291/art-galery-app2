@@ -10,35 +10,46 @@ export default createGlobalStyle`
 
 
 body {
-  
   height: 100%;
    display: flex;
    flex-direction: column;
    justify-content: center;
-   align-items: center;
+   align-items: center; 
+  }
 
-  
-   
-}
-.swiper {
-  width: 100%;
-  heigth: 100%;
+  .textContainer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .swiper {
+  width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
-}
+  }
+  .swiper-slide{
+    flex-shrink: 0;
+    width: 60%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+  }
 
-.swiper-slide {
+  .swiperSlide {
+   
   background-position: center;
   background-size: cover;
-  width: 40vw;
-  height: 40vw;
-}
+  width: 300px;
+  height: 350px;
+ } 
 
-.swiper-slide img {
+ .swiperSlide img {
   display: block;
-  width: 100%;
-}
-.favoriteBtn {
+  width: 80%;
+ }
+ .favoriteBtn {
   appearance: none;
   background: none;
   border: none;
@@ -49,9 +60,9 @@ body {
   background-color: transparent;
   margin: -6px;
   padding: 6px;
-}
-.cartContainer {
-  width: 90%;
+ }
+ .cartContainer {
+  width: 80%;
   background-color: white;
   border: 1px solid black;
   border-radius: 1rem;
@@ -60,18 +71,22 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  overflow:hidden;
+ }
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content:flex-start;
   align-items: center;
   border: 1px solid black;
   border-radius: 1rem;
   background-color: black;
-  width: 90vw;
-}
-.footerContainer {
+  width: 100vw;
+  height:100vh;
+ }
+
+ .footerContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -81,16 +96,16 @@ body {
   width: 100%;
   z-index: 1;
 }
-.image {
+ .image {
   object-fit: contain;
  
-}
-.linkContainer {
+ }
+ .linkContainer {
   margin: 1rem;
   /* padding: 1rem; */
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
+ }
 .link {
   padding: 1rem;
   margin: 0;
