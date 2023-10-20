@@ -46,16 +46,14 @@ export default function artPiece({ onToggle, artPiecesInfo }) {
                   <Link href={`/artPiece/${element.slug}`}>
                     <div className="textContainer">
                       <h2> {element.artist}</h2>
-                      <h3> {element.name}</h3>
                     </div>
                     <Image
                       className="image"
                       src={element.imageSource}
                       alt="pictur autor"
-                      width={550}
-                      height={350}
+                      width={350}
+                      height={250}
                     />
-                    <p>{element.year}</p>
                   </Link>
                   <button
                     type="button"

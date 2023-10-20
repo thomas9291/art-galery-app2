@@ -1,30 +1,26 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  text-decoration:none;
-}
+
 
 
 body {
   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center; 
+  width:100%;
+   display: block;
+  
   }
 
   .textContainer{
     display:flex;
     flex-direction:column;
     align-items:center;
+    
   }
 
   .swiper {
   width: 80%;
+  heigth:100%;
   padding-top: 50px;
   padding-bottom: 50px;
   }
@@ -36,19 +32,25 @@ body {
     transition-property: transform;
     display: block;
   }
-
-  .swiperSlide {
+  .swiper-slide, swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+}
+  .swiper-slide {
    
   background-position: center;
   background-size: cover;
   width: 300px;
-  height: 350px;
  } 
 
- .swiperSlide img {
+ /* .swiper-slide img {
   display: block;
-  width: 80%;
- }
+  width: 100%;
+ } */
  .favoriteBtn {
   appearance: none;
   background: none;
@@ -62,7 +64,6 @@ body {
   padding: 6px;
  }
  .cartContainer {
-  width: 80%;
   background-color: white;
   border: 1px solid black;
   border-radius: 1rem;
@@ -83,7 +84,7 @@ body {
   border-radius: 1rem;
   background-color: black;
   width: 100vw;
-  height:100vh;
+  /* height:100vh; */
  }
 
  .footerContainer {
