@@ -41,8 +41,10 @@ export default function favorites({ filteredFavorite, onToggle }) {
               <SwiperSlide key={index}>
                 <Cart>
                   <Link href={`/artPiece/${element.slug}`}>
-                    <h2>Artist name: {element.artist}</h2>
-                    <h3>Picture name: {element.name}</h3>
+                    <div className="textContainer">
+                      <h2> {element.artist}</h2>
+                      <h3> {element.name}</h3>
+                    </div>
                     <Image
                       className="image"
                       src={element.imageSource}
